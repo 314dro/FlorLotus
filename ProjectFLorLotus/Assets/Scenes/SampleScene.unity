@@ -16993,6 +16993,51 @@ Transform:
   - {fileID: 1095584404}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &479846996
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 479846998}
+  - component: {fileID: 479846997}
+  m_Layer: 0
+  m_Name: BattleManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &479846997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479846996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c62461c4e53b5343afa7628ccd20dab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeEnemies: []
+--- !u!4 &479846998
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479846996}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -65.4209, y: -42.73825, z: -0.054312933}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &496342406
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24580,7 +24625,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0
+  m_Intensity: 0.81
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -28698,6 +28743,10 @@ PrefabInstance:
     - target: {fileID: 1643292570723230868, guid: b6a57c29ffb4fa45082241b42bdeb18d, type: 3}
       propertyPath: m_Name
       value: Enemy FOV
+      objectReference: {fileID: 0}
+    - target: {fileID: 3010802640868303034, guid: b6a57c29ffb4fa45082241b42bdeb18d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3800362604176633231, guid: b6a57c29ffb4fa45082241b42bdeb18d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -55211,7 +55260,6 @@ MonoBehaviour:
   music: {fileID: 1460488338}
   backgroundMusic: {fileID: 8300000, guid: b3e0849d670aa974f88cf4968d6330b5, type: 3}
   battleMusic: {fileID: 8300000, guid: 5d127821107a9484c8f800927d84db0b, type: 3}
-  isBattling: 0
 --- !u!4 &1844507099
 Transform:
   m_ObjectHideFlags: 0
@@ -55585,3 +55633,4 @@ SceneRoots:
   - {fileID: 546650444}
   - {fileID: 1417608818}
   - {fileID: 1844507099}
+  - {fileID: 479846998}
