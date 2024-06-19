@@ -19,14 +19,25 @@ public class AudioManager : MonoBehaviour
     }
 
     private void Update()
-    { 
-        if (FindObjectOfType<BattleManager>().IsInCombat() && this.music.clip == backgroundMusic)
+    {
+        BattleManager battleManager = FindObjectOfType<BattleManager>();
+
+        if (battleManager.IsInCombat() && this.music.clip == backgroundMusic)
         {
+            this.music.volume = 1;
             this.music.clip = battleMusic;
             this.music.Play();
         }
-        else if (!FindObjectOfType<BattleManager>().IsInCombat() && this.music.clip == battleMusic)
+        else if (battleManager.IsInCombat() && this.music.clip == battleMusic)
         {
+            if (battleManager.GetBattleTimeLeft() > 0)
+            {
+                this.music.volume = battleManager.GetBattleTimeLeft() / BattleManager.AFTER_BATTLE_DELAY;
+            }
+        }
+        else if (!battleManager.IsInCombat() && this.music.clip == battleMusic)
+        {
+            this.music.volume = 1;
             this.music.clip = backgroundMusic;
             this.music.Play();
         }
