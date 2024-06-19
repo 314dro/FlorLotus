@@ -43,17 +43,19 @@ namespace Shooter
         {
             if (other.gameObject.CompareTag("Player"))
             {
-                FindObjectOfType<AudioManager>().ToggleBattleMusic();
+                //FindObjectOfType<AudioManager>().ToggleBattleMusic();
+                FindObjectOfType<BattleManager>().AddEnemy(this.gameObject);
                 stateController.SwitchState(new AttackState(this, stateController, other.gameObject.GetComponent<CommonPlayer>()));
             }
         }
 
         void OnTriggerExit2D(Collider2D other)
         {
-            AudioManager audioManager = FindObjectOfType<AudioManager>();
+            //AudioManager audioManager = FindObjectOfType<AudioManager>();
             if (other.gameObject.CompareTag("Player"))
             {   
-                audioManager.ToggleBattleMusic();
+                //audioManager.ToggleBattleMusic();
+                FindObjectOfType<BattleManager>().RemoveEnemy(this.gameObject);
                 stateController.SwitchState(patrolState);
             }
         }

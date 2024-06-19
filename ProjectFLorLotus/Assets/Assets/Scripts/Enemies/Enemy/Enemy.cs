@@ -50,7 +50,8 @@ namespace Enemy
         {
             if (other.gameObject.CompareTag("Player"))
             {
-                FindObjectOfType<AudioManager>().ToggleBattleMusic();
+                //FindObjectOfType<AudioManager>().ToggleBattleMusic();
+                FindObjectOfType<BattleManager>().AddEnemy(this.gameObject);
                 stateController.SwitchState(new ChaseState(this, stateController, other.gameObject.GetComponent<CommonPlayer>()));
             }
         }
@@ -59,7 +60,8 @@ namespace Enemy
         {
             if (other.gameObject.CompareTag("Player"))
             {
-                FindObjectOfType<AudioManager>().ToggleBattleMusic();
+                //FindObjectOfType<AudioManager>().ToggleBattleMusic();
+                FindObjectOfType<BattleManager>().RemoveEnemy(this.gameObject);
                 stateController.SwitchState(patrolState);
             }
         }

@@ -33,14 +33,16 @@ namespace TurretEnemy
         {
             if (entityInFOV.CompareTag("Player") && this.stateController.currentState.GetType() == typeof(PatrolState))
             {
-                FindObjectOfType<AudioManager>().ToggleBattleMusic();
+                FindObjectOfType<BattleManager>().AddEnemy(this.gameObject);
+                //FindObjectOfType<AudioManager>().ToggleBattleMusic();
                 this.stateController.SwitchState(new AttackState(this, stateController, entityInFOV));
             }
         }
 
         public override void FOVExitSight()
         {
-            FindObjectOfType<AudioManager>().ToggleBattleMusic();
+            //FindObjectOfType<AudioManager>().ToggleBattleMusic();
+            FindObjectOfType<BattleManager>().RemoveEnemy(this.gameObject);
             this.stateController.SwitchState(new PatrolState(this, stateController));
         }
 
